@@ -7,8 +7,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
-
+// all routes
+app.use("/blogs",require("./routes/blogs.routes"))
 
 
 // connect Database

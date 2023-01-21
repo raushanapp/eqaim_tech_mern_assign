@@ -22,9 +22,12 @@ const createBlogPost = async (req, res) => {
 const getAllBlogPost = async (req, res) => {
     try {
         const blogs = await Blog.find().lean().exec();
+        const totals = await Blog.find().countDocuments().lean().exec();
+        console.log(totals);
         res.status(200).json({
             success: true,
-            blogs: blogs
+            blogs: blogs,
+            totalBlogs:totals
         })
     } catch (error) {
         res.status(500).json({
