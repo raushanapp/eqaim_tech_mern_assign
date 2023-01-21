@@ -1,16 +1,8 @@
 .homeMain{
-    /* display: flex; */
-    /* border: 1px solid #ccc; */
     position: absolute;
     width: 1349px;
     height: 768px;
     background: #FFFFFF;
-    /* margin: auto;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px; */
-    /* padding:1rem 6%; */
 }
 
 .headerDiv{
