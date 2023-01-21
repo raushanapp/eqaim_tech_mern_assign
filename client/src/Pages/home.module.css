@@ -1,0 +1,63 @@
+.homeMain{
+    /* display: flex; */
+    /* border: 1px solid #ccc; */
+    position: absolute;
+    width: 1349px;
+    height: 768px;
+    background: #FFFFFF;
+    /* margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px; */
+    /* padding:1rem 6%; */
+}
+
+.headerDiv{
+    position: absolute;
+    width: 1349px;
+    height: 143px;
+    background: #E9E9E9;
+}
+.header{
+    position: absolute;
+    width: 263px;
+    height: 58px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 58px;
+    /* identical to box height */
+    color: #000000;
+}
+
+
+/* grid */
+
+.gridDiv{
+    display: grid;
+    /* border: 1px solid Red; */
+    grid-template-columns: 350px 350px 350px;
+    gap: 15px;
+    padding: 1rem 6%;
+    margin: auto;
+    align-items: center;
+    margin-top: 170px;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.newBlogWriteIcon{
+    position: absolute;
+    width: 80px;
+    border: 1px solid #ccc;
+    height: 70px;
+    background: #E9E9E9;
+    border-radius: 8px;
+    cursor: pointer;
+    /* flex-wrap: wrap-reverse; */
+    margin-left: 550px;
+    margin-bottom:-80px;
+}
