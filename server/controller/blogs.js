@@ -20,13 +20,24 @@ const createBlogPost = async (req, res) => {
 // get all post
 
 const getAllBlogPost = async (req, res) => {
+    let { page, limit } = req.query;
     try {
-        const blogs = await Blog.find().lean().exec();
+        let totalLimit = limit || 3;
+        let skip = (page - 1) * totalLimit;
+
+        const blogs = await Blog.find().skip(skip).limit(totalLimit).lean().exec();
         const totals = await Blog.find().countDocuments().lean().exec();
-        // console.log(totals);
+        const titleConveToUpperCase = blogs.map(({title,post}) => {
+            return {
+                title: title?.toUpperCase(),
+                post
+           }
+        })
+        
+         console.log(titleConveToUpperCase)
         res.status(200).json({
             success: true,
-            blogs: blogs,
+            blogs: titleConveToUpperCase,
             totalBlogs:totals
         })
     } catch (error) {
