@@ -53,3 +53,31 @@
     margin-left: 550px;
     margin-bottom:-80px;
 }
+
+/* pagination */
+.btnDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+}
+.btnDiv > p{
+    font-size: 25px;
+    font-weight: bold;
+}
+.btn{
+    padding:0.60rem 1.75rem;
+    margin: 5px;
+    background: none;
+    border: 1px solid #444;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.btn:hover{
+    background-color: #444;
+    color: #FFFFFF;
+    opacity: 0.4;
+    border: none;
+}

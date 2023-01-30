@@ -50,13 +50,23 @@ export const Home = () => {
                     />
                 </button>
             </Link>
-            <button
-                onClick={() => handlePageChange(-1)}
-                disabled={page===1}
-            >
-                Prev
-            </button>
-            <button onClick={()=>handlePageChange(1)} disabled={blogs.length<3}>Next</button>
+            <div className={style.btnDiv}>
+                <button
+                    className={style.btn}
+                    onClick={() => handlePageChange(-1)}
+                    disabled={page===1}
+                >
+                    Prev
+                </button>
+                <p >{ page}</p>
+                <button
+                    onClick={() => handlePageChange(1)}
+                    disabled={blogs.length < 3}
+                    className={style.btn}
+                >
+                    Next
+                </button>
+            </div>
         </div>
     )
 }

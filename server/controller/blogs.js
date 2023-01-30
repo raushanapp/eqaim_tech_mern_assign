@@ -27,14 +27,15 @@ const getAllBlogPost = async (req, res) => {
 
         const blogs = await Blog.find().skip(skip).limit(totalLimit).lean().exec();
         const totals = await Blog.find().countDocuments().lean().exec();
-        const titleConveToUpperCase = blogs.map(({title,post}) => {
+        const titleConveToUpperCase = blogs.map(({_id,title,post}) => {
             return {
+                _id,
                 title: title?.toUpperCase(),
                 post
            }
         })
         
-         console.log(titleConveToUpperCase)
+        //  console.log(titleConveToUpperCase)
         res.status(200).json({
             success: true,
             blogs: titleConveToUpperCase,
@@ -52,10 +53,16 @@ const getAllBlogPost = async (req, res) => {
 const getSingleBlogPost = async (req, res) => {
     const id = req.params.id;
     try {
-        const blog = await Blog.findById({_id:id});
+        const blog = await Blog.findById({ _id: id });
+        const upperCaseTitle = {
+            _id:blog._id,
+            title: blog.title.toUpperCase(),
+            post:blog.post
+        }
+        // console.log(upperCaseTitle)
         res.status(200).json({
             success: true,
-            blog: blog
+            blog: upperCaseTitle
         })
     } catch (error) {
         res.status(500).json({
